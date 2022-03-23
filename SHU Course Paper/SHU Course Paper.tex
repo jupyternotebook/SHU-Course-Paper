@@ -1,0 +1,90 @@
+\PassOptionsToPackage{AutoFakeBold}{xeCJK}
+\documentclass[UTF8]{ctexart}
+\usepackage{ragged2e}
+\usepackage{float}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{threeparttable}
+\usepackage{setspace}
+\usepackage{xeCJK}
+\usepackage{indentfirst} 
+\usepackage{pdfpages}
+\usepackage{fontspec}
+\usepackage{subcaption}
+\usepackage{titlesec}
+\usepackage[colorlinks,linkcolor=red,anchorcolor=blue,citecolor=blue]{hyperref}
+\geometry{a4paper,scale=0.8}
+\pagestyle{plain}
+\newcommand{\upcite}[1]{\textsuperscript{\textsuperscript{\cite{#1}}}}
+\newcommand{\downcite}[1]{\textsubscript{\textsubscript{\cite{#1}}}}
+\setlength{\baselineskip}{20pt}
+\setlength{\parindent}{2em}
+\newcommand{\Xinwei}{\CJKfontspec{STXinwei}}
+\newcommand{\Songti}{\CJKfontspec{SimSun}\zihao{-4}}
+\newcommand{\Heiti}{\CJKfontspec{SimHei}\zihao{2}}
+\setmainfont{Times New Roman}%字体设置
+\CTEXsetup[format={\Heiti\zihao{4}\bfseries}]{section}
+\CTEXsetup[format={\Songti\zihao{-4}\bfseries}]{subsection}
+\CTEXsetup[format={\Songti\zihao{-4}},indent=2em]{subsubsection}
+\newcommand{\enabstractname}{Abstract}
+\newcommand{\cnabstractname}{摘要}
+\newenvironment{enabstract}{\par\small\noindent\mbox{}\hfill{\bfseries\enabstractname}\hfill\mbox{}\par\vskip 2.5ex}{\par\vskip 2.5ex}
+\newenvironment{cnabstract}{\par\small\noindent\mbox{}\hfill{\bfseries\cnabstractname}\hfill\mbox{}\par\vskip 2.5ex}{\par\vskip 2.5ex}
+
+\title{文章标题}
+\author{姓名}
+\date{}%用于在正文生成标题，不需要可以删掉
+\begin{document}
+\thispagestyle{empty}
+\Songti 评分：\underline{\qquad\qquad\qquad}\\
+\begin{figure}[h]
+\centering
+\parbox[b]{3cm}{\includegraphics[scale=0.4]{logo.pdf}}
+\parbox[b]{7cm}{
+\begin{center}
+\includegraphics[scale=0.55]{shu.pdf}
+\large\textbf{SHANGHAI\quad UNIVERSITY}
+\end{center}
+}
+\end{figure}
+\begin{center}
+\quad \\
+\quad \\
+\Xinwei \fontsize{30}{17}\textbf{课\quad 程\quad 论\quad 文}
+
+\large\textbf{COURSE PAPER}
+\vskip 3.5cm
+\Heiti\zihao{1}\textbf{文章标题}
+\end{center}
+\vskip 3.5cm
+\begin{center}\zihao{3}
+课程名称\quad\underline{\quad\makebox[7em][s]{课程名称}\quad}\\
+课程编号\quad\underline{\quad\makebox[7em][s]{\hspace{\fill}课程编号\hspace{\fill}}\quad}\\
+学\qquad 院\quad\underline{\quad\makebox[7em][s]{\hspace{\fill}学院\hspace{\fill}}\quad}\\
+学\qquad 号\quad\underline{\quad\makebox[7em][s]{\hspace{\fill}学号\hspace{\fill}}\quad}\\
+学生姓名\quad\underline{\quad\makebox[7em][s]{\hspace{\fill}姓名\hspace{\fill}}\quad}\\
+授课教师\quad\underline{\quad\makebox[7em][s]{\hspace{\fill}教师名\hspace{\fill}}\quad}\\
+\end{center}
+\clearpage
+\maketitle
+\setcounter{page}{1}%设置页码
+\begin{cnabstract}
+中文摘要
+\par\textbf{关键字: 关键字之间用 \quad 隔开}
+\end{cnabstract}
+\begin{enabstract}
+English abstract
+\par\textbf{Keywords: use \quad to separate} 
+\end{enabstract}
+\section{引言}
+引言
+\section{一级标题}
+  \subsection{二级标题}
+    \subsubsection{三级标题}
+上标引用\upcite{introduction1}
+
+下标引用\downcite{conv}
+\bibliographystyle{plain}
+\bibliography{Reference}
+\end{document}
